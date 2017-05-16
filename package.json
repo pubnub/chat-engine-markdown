@@ -1,0 +1,15 @@
+{
+  "name": "ocf-markdown",
+  "version": "0.0.1",
+  "main": "./plugin.js",
+  "open-chat-framework": {
+    "namespace": "markdown"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.3.0"
+  },
+  "dependencies": {
+    "snarkdown": "^1.2.2"
+  }
+}
