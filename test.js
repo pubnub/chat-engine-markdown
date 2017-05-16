@@ -1,6 +1,6 @@
 
 const assert = require('chai').assert;
-const emoji = require('./plugin.js');
+const markdown = require('./plugin.js');
 
 const OpenChatFramework = require('../open-chat-framework/src/index.js'); 
 
@@ -47,7 +47,7 @@ describe('plugins', function() {
         
         pluginchat = new OCF.Chat('pluginchat' + new Date().getTime());
 
-        pluginchat.plugin(emoji({}));
+        pluginchat.plugin(markdown({}));
 
     });
 
