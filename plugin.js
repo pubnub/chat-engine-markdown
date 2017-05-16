@@ -5,7 +5,6 @@ module.exports = (config) => {
     let parseMarkdown = function(payload, next) {
         
         if(payload.data.text) {
-            // parse emoji
             payload.data.text = snarkdown(payload.data.text);
         }
 
