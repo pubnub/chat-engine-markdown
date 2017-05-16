@@ -55,17 +55,17 @@ describe('plugins', function() {
 
         pluginchat.ready(() => {
 
-            let success = '<img class="emoji" title=":pizza:" alt="pizza" src="http://www.webpagefx.com/tools/emoji-cheat-sheet/graphics/emojis/pizza.png" height="16" />';
+            let success = 'This is some <em>markdown</em> <strong>for sure</strong>.';
 
             pluginchat.on('message', (payload) => {
 
-                assert.isAbove(payload.data.text.indexOf(success), 0, 'emoji rendered');
+                assert.isAbove(payload.data.text.indexOf(success), -1);
                 done();
 
             });
 
             pluginchat.send('message', {
-                text: 'I want :pizza:'
+                text: 'This is some *markdown* **for sure**.'
             });
 
         });
