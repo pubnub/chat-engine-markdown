@@ -5,12 +5,12 @@
   "open-chat-framework": {
     "namespace": "markdown"
   },
+  "dependencies": {
+    "ocf": "^0.0.2",
+    "snarkdown": "^1.2.2"
+  },
   "devDependencies": {
     "chai": "^3.5.0",
-    "mocha": "^3.3.0",
-    "ocf": "0.0.2"
-  },
-  "dependencies": {
-    "snarkdown": "^1.2.2"
+    "mocha": "^3.3.0"
   }
 }
