@@ -2,7 +2,7 @@
 const assert = require('chai').assert;
 const markdown = require('./plugin.js');
 
-const OpenChatFramework = require('../open-chat-framework/src/index.js'); 
+const OpenChatFramework = require('ocf'); 
 
 let pluginchat;
 let OCF;

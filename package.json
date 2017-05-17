@@ -7,7 +7,8 @@
   },
   "devDependencies": {
     "chai": "^3.5.0",
-    "mocha": "^3.3.0"
+    "mocha": "^3.3.0",
+    "ocf": "0.0.2"
   },
   "dependencies": {
     "snarkdown": "^1.2.2"
