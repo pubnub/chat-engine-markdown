@@ -1,8 +1,8 @@
 
 const assert = require('chai').assert;
-const markdown = require('./plugin.js');
+const markdown = require('./src/plugin.js');
 
-const OpenChatFramework = require('ocf'); 
+const OpenChatFramework = require('ocf');
 
 let pluginchat;
 let OCF;
@@ -14,7 +14,7 @@ describe('config', function() {
         OCF = OpenChatFramework.create({
             globalChannel: 'test-channel',
             rltm: {
-                service: 'pubnub', 
+                service: 'pubnub',
                     config: {
                     publishKey: 'pub-c-07824b7a-6637-4e6d-91b4-7f0505d3de3f',
                     subscribeKey: 'sub-c-43b48ad6-d453-11e6-bd29-0619f8945a4f',
@@ -44,7 +44,7 @@ describe('connect', function() {
 describe('plugins', function() {
 
     it('should be created', function() {
-        
+
         pluginchat = new OCF.Chat('pluginchat' + new Date().getTime());
 
         pluginchat.plugin(markdown({}));
