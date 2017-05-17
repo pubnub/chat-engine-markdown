@@ -1,9 +1,9 @@
 const snarkdown = require('snarkdown');
 
 module.exports = (config) => {
-    
+
     let parseMarkdown = function(payload, next) {
-        
+
         if(payload.data.text) {
             payload.data.text = snarkdown(payload.data.text);
         }
@@ -21,6 +21,7 @@ module.exports = (config) => {
 
     // define both the extended methods and the middleware in our plugin
     return {
+        namespace: 'markdown',
         middleware: {
             broadcast: broadcast
         },
