@@ -1,5 +1,6 @@
 {
   "name": "ocf-markdown",
+  "author": "Ian Jennings",
   "version": "0.0.1",
   "main": "src/plugin.js",
   "dependencies": {
