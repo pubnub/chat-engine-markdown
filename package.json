@@ -1,9 +1,10 @@
 {
   "name": "ocf-markdown",
   "author": "Ian Jennings",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "src/plugin.js",
   "dependencies": {
+    "dotty": "0.0.2",
     "ocf": "^0.0.4",
     "snarkdown": "^1.2.2"
   },

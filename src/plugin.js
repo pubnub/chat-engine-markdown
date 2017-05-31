@@ -1,11 +1,16 @@
 const snarkdown = require('snarkdown');
+const dotty = require("dotty");
 
-module.exports = (config) => {
+module.exports = (config = {}) => {
+
+    config.prop = config.prop || 'data.text';
 
     let parseMarkdown = function(payload, next) {
 
-        if(payload.data.text) {
-            payload.data.text = snarkdown(payload.data.text);
+        let text = dotty.get(payload, config.prop);
+
+        if(text) {
+            dotty.put(payload, config.prop, snarkdown(text));
         }
 
         // continue along middleware
