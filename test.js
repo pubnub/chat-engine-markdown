@@ -11,17 +11,11 @@ describe('config', function() {
 
     it('should be configured', function() {
 
-        OCF = OpenChatFramework.create({
-            globalChannel: 'test-channel',
-            rltm: {
-                service: 'pubnub',
-                    config: {
-                    publishKey: 'demo',
-                    subscribeKey: 'demo',
-                    uuid: new Date(),
-                    state: {}
-                }
-            }
+        OCF = OpenChatFramework.create('pubnub', {
+            publishKey: 'demo',
+            subscribeKey: 'demo',
+            uuid: new Date(),
+            state: {}
         });
 
         assert.isOk(OCF);
@@ -53,7 +47,7 @@ describe('plugins', function() {
 
     it('publish and subscribe hooks should be called', function(done) {
 
-        pluginchat.ready(() => {
+        pluginchat.on('$ocf.ready', () => {
 
             let success = 'This is some <em>markdown</em> <strong>for sure</strong>.';
 
@@ -64,7 +58,7 @@ describe('plugins', function() {
 
             });
 
-            pluginchat.send('message', {
+            pluginchat.emit('message', {
                 text: 'This is some *markdown* **for sure**.'
             });
 

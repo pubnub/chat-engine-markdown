@@ -5,7 +5,7 @@
   "main": "src/plugin.js",
   "dependencies": {
     "dotty": "0.0.2",
-    "ocf": "^0.0.4",
+    "ocf": "^0.1.3",
     "snarkdown": "^1.2.2"
   },
   "devDependencies": {
