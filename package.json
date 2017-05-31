@@ -1,7 +1,7 @@
 {
   "name": "ocf-markdown",
   "author": "Ian Jennings",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "src/plugin.js",
   "dependencies": {
     "dotty": "0.0.2",
