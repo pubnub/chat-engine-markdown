@@ -1,4 +1,4 @@
-(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+  (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 (function() {
 
     const package = require('../package.json');
@@ -51,7 +51,7 @@ var exists = module.exports.exists = function exists(object, path) {
 //
 // The return value, however, is the property you're trying to access, or
 // `undefined` if it can't be found. This means you won't be able to tell
-// the difference between an unresolved path and an undefined property, so you 
+// the difference between an unresolved path and an undefined property, so you
 // should not use `get` to check for the existence of a property. Use `exists`
 // instead.
 //
@@ -143,7 +143,7 @@ var put = module.exports.put = function put(object, path, value) {
   if (!(path instanceof Array) || path.length === 0) {
     return false;
   }
-  
+
   path = path.slice();
 
   var key = path.shift();
@@ -182,7 +182,7 @@ var remove = module.exports.remove = function remove(object, path, value) {
   if (!(path instanceof Array) || path.length === 0) {
     return false;
   }
-  
+
   path = path.slice();
 
   var key = path.shift();
