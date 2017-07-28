@@ -1,6 +1,25 @@
+/**
+* Renders markdown from the ```message``` event. Looks for ```payload.data.text```.
+* @module chat-engine-markdown
+*/
 const snarkdown = require('snarkdown');
 const dotty = require("dotty");
 
+/**
+* @function
+* @example
+* pluginchat = new ChatEngine.Chat('markdown-chat');
+* pluginchat.plugin(markdown({}));
+* pluginchat.on('message', (payload) => {
+*
+*    // payload.data.text == 'This is some <em>markdown</em> <strong>for sure</strong>.'
+*
+* });
+*
+* pluginchat.emit('message', {
+*    text: 'This is some *markdown* **for sure**.'
+* });
+*/
 module.exports = (config = {}) => {
 
     config.prop = config.prop || 'data.text';
