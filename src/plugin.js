@@ -7,6 +7,9 @@ const dotty = require("dotty");
 
 /**
 * @function
+* @param {Object} [config] The config object
+* @param {String} [event="message"] The ChatEngine event where markdown will be parsed
+* @param {String} [prop="data.text"] The event property value where markdown should be parsed.
 * @example
 * pluginchat = new ChatEngine.Chat('markdown-chat');
 * pluginchat.plugin(markdown({}));
@@ -23,6 +26,7 @@ const dotty = require("dotty");
 module.exports = (config = {}) => {
 
     config.prop = config.prop || 'data.text';
+    config.event = config.event || 'message'
 
     let parseMarkdown = function(payload, next) {
 
@@ -38,14 +42,17 @@ module.exports = (config = {}) => {
     };
 
     // define both the extended methods and the middleware in our plugin
-    return {
+    let result = {
         namespace: 'markdown',
         middleware: {
-            on: {
-                'message': parseMarkdown,
-                '$history.message': parseMarkdown
-            }
+            on: {}
         },
-    }
+    };
+
+
+    result.middleware.on[config.event] = parseMarkdown;
+    result.middleware.on['$history.' + config.event] = parseMarkdown;
+
+    return result;
 
 }
