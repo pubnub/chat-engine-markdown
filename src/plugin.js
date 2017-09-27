@@ -1,27 +1,35 @@
 /**
-* Renders markdown from the ```message``` event. Looks for ```payload.data.text```.
+* Renders markdown from the ```message``` event.
 * @module chat-engine-markdown
+* @requires {@link ChatEngine}
+* @requires {@link snarkdown}
+* @requires {@link dotty}
 */
 const snarkdown = require('snarkdown');
-const dotty = require("dotty");
+const dotty = require('dotty');
 
 /**
 * @function
-* @param {Object} [config] The config object
-* @param {String} [event="message"] The ChatEngine event where markdown will be parsed
-* @param {String} [prop="data.text"] The event property value where markdown should be parsed.
 * @example
-* pluginchat = new ChatEngine.Chat('markdown-chat');
-* pluginchat.plugin(markdown({}));
-* pluginchat.on('message', (payload) => {
-*
-*    // payload.data.text == 'This is some <em>markdown</em> <strong>for sure</strong>.'
-*
-* });
-*
+* // providing a config is optional
+* // the default property is ```data.text``` and the default event is ```message```
+* let config = { prop: 'data.text', event: 'message' }
+* chat.plugin(ChatEngineCore.plugin['chat-engine-markdown'](config));
+* 
+* // send markdown syntax
 * pluginchat.emit('message', {
 *    text: 'This is some *markdown* **for sure**.'
 * });
+* 
+* // receive rendered markdown
+* chat.on('message', (payload) => {
+*    console.log(payload.data.text);
+*    //'This is some <em>markdown</em> <strong>for sure</strong>.'
+* });
+* 
+* @param {Object} [config] The config object
+* @param {String} [event="message"] The ChatEngine event where markdown will be parsed
+* @param {String} [prop="data.text"] The event property value where markdown should be parsed.
 */
 module.exports = (config = {}) => {
 
