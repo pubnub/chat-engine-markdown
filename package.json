@@ -1,7 +1,7 @@
 {
   "name": "chat-engine-markdown",
   "author": "Ian Jennings",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "main": "src/plugin.js",
   "dependencies": {
     "chat-engine": "^0.5.2",
