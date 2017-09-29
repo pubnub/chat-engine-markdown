@@ -11,22 +11,17 @@ const dotty = require('dotty');
 /**
 * @function
 * @example
-* // providing a config is optional
-* // the default property is ```data.text``` and the default event is ```message```
-* let config = { prop: 'data.text', event: 'message' }
-* chat.plugin(ChatEngineCore.plugin['chat-engine-markdown'](config));
-* 
-* // send markdown syntax
-* pluginchat.emit('message', {
-*    text: 'This is some *markdown* **for sure**.'
-* });
-* 
-* // receive rendered markdown
+* chat.plugin(ChatEngineCore.plugin['chat-engine-markdown']());
+
 * chat.on('message', (payload) => {
 *    console.log(payload.data.text);
-*    //'This is some <em>markdown</em> <strong>for sure</strong>.'
 * });
-* 
+*
+* chat.emit('message', {
+*    text: 'This is some *markdown* **for sure**.'
+* });
+* // 'This is some <em>markdown</em> <strong>for sure</strong>.
+*
 * @param {Object} [config] The config object
 * @param {String} [event="message"] The ChatEngine event where markdown will be parsed
 * @param {String} [prop="data.text"] The event property value where markdown should be parsed.
