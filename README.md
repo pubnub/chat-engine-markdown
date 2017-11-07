@@ -9,9 +9,6 @@ Adds the ability to render Markdown in a ChatEngine Chat
 const ChatEngine = ChatEngineCore.create({
     publishKey: 'pub-key-here',
     subscribeKey: 'sub-key-here'
-}, {
-    endpoint: 'http://chatengine:server/',
-    globalChannel: 'global-channel-name'
 });
 
 ChatEngine.connect('Username');
