@@ -7,15 +7,12 @@ let submit = function () {};
 
 // create an instance of chat-engine
 const ChatEngine = ChatEngineCore.create({
-    publishKey: 'pub-c-cac359a5-a808-40b9-8386-dd2335e78800',
-    subscribeKey: 'sub-c-77f45f90-c3f1-11e7-af0a-a6cd3ce24ae2'
-}, {
-    globalChannel: 'markdown-example',
-    endpoint: 'https://pubsub.pubnub.com/v1/blocks/sub-key/sub-c-77f45f90-c3f1-11e7-af0a-a6cd3ce24ae2/server'
+    publishKey: 'pub-c-c2a407d1-2771-4d22-9063-bd538c8d720f',
+    subscribeKey: 'sub-c-72ef270e-c41a-11e7-8c2e-7612aca27832'
 });
 
 // connect the guy that sings 'Down with the Sickness' to the network, and when it is successful, do some stuff
-ChatEngine.connect('David Draiman');
+ChatEngine.connect('David-Draiman');
 
 ChatEngine.on('$.ready', () => {
 
