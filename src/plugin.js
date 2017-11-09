@@ -6,7 +6,7 @@
 * @requires {@link dotty}
 */
 const markdown = require('markdown-it')({
-  linkify: true
+    linkify: true
 });
 const dotty = require('dotty');
 
@@ -56,7 +56,6 @@ module.exports = (config = {}) => {
 
 
     result.middleware.on[config.event] = parseMarkdown;
-    result.middleware.on['$history.' + config.event] = parseMarkdown;
 
     return result;
 
