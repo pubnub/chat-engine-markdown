@@ -7,8 +7,8 @@ let submit = function () {};
 
 // create an instance of chat-engine
 const ChatEngine = ChatEngineCore.create({
-    publishKey: 'pub-c-2d798b67-5637-4429-baaa-f7a559763cd8',
-    subscribeKey: 'sub-c-c12ea6c2-c4ee-11e7-b2fd-1e2f18d1069d'
+    publishKey: 'your_pub_key_here',
+    subscribeKey: 'your_sub_key_here'
 });
 
 // connect the guy that sings 'Down with the Sickness' to the network, and when it is successful, do some stuff
