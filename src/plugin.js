@@ -5,7 +5,9 @@
 * @requires {@link snarkdown}
 * @requires {@link dotty}
 */
-const snarkdown = require('snarkdown');
+const markdown = require('markdown-it')({
+    linkify: true
+});
 const dotty = require('dotty');
 
 /**
@@ -36,7 +38,7 @@ module.exports = (config = {}) => {
         let text = dotty.get(payload, config.prop);
 
         if(text) {
-            dotty.put(payload, config.prop, snarkdown(text));
+            dotty.put(payload, config.prop, markdown.render(text));
         }
 
         // continue along middleware
@@ -54,7 +56,6 @@ module.exports = (config = {}) => {
 
 
     result.middleware.on[config.event] = parseMarkdown;
-    result.middleware.on['$history.' + config.event] = parseMarkdown;
 
     return result;
 
