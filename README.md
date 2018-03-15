@@ -1,4 +1,4 @@
-# Markdown Plugin for Chat Engine
+# Markdown Plugin for ChatEngine
 
 Adds the ability to render Markdown in a ChatEngine Chat
 
