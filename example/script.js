@@ -7,8 +7,8 @@ let submit = function () {};
 
 // create an instance of chat-engine
 const ChatEngine = ChatEngineCore.create({
-    publishKey: 'your_pub_key_here',
-    subscribeKey: 'your_sub_key_here'
+    publishKey: 'pub-c-01491c54-379f-4d4a-b20b-9a03c24447c7',
+    subscribeKey: 'sub-c-eaf4a984-4356-11e8-91e7-8ad1b2d46395'
 });
 
 // connect the guy that sings 'Down with the Sickness' to the network, and when it is successful, do some stuff
@@ -43,4 +43,21 @@ ChatEngine.on('$.ready', () => {
 
     });
 
+    let searchy = ChatEngine.global.search({
+        event: 'message',
+        limit: 50
+    }).plugin(ChatEngineCore.plugin['chat-engine-markdown']());
+
+    searchy.on('message', (payload) => {
+        $('#output').append($('<p><strong>' + payload.sender.uuid + ':</strong> ' + payload.data.text + '</p>'));
+    });
+
+    console.log('global', ChatEngine.global.plugins)
+    console.log('searchy', searchy.plugins)
+
+    searchy.on('$.search.finish', () => {
+        console.log('end of search');
+    });
+
 });
+
