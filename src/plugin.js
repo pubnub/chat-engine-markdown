@@ -1,5 +1,5 @@
 /**
-* @overview Markdown is used for *formatting* **important** text and ```code``` examples. The ChatEngine Markdown plugin enables Markdown rendering in chat messages. <br>
+* @overview Markdown is used for *formatting* **important** text and ```code``` examples. The ChatEngine Markdown plugin enables Markdown rendering in chat messages. <br> <img src="plugins/chat-engine-markdown/output.gif" height="375"></img> <br>
 * Renders markdown from the ```message``` event.
 * @module chat-engine-markdown
 * @requires {@link ChatEngine}
