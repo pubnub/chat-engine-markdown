@@ -33,3 +33,7 @@ ChatEngine.global.emit('message', {
 });
 // This is some <em>markdown</em> <strong>for sure</strong>.
 ```
+
+## Support
+
+- If you **need help**, have a **general question** a **feature request** or to file a **bug**, contact <support@pubnub.com>
