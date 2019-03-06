@@ -1,15 +1,15 @@
 {
   "name": "chat-engine-markdown",
   "author": "Ian Jennings",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "main": "src/plugin.js",
   "dependencies": {
-    "chat-engine": "^0.8.3",
+    "chat-engine": "^0.9.21",
     "dotty": "0.0.2",
     "markdown-it": "^8.4.0"
   },
   "devDependencies": {
     "chai": "^3.5.0",
-    "mocha": "^3.3.0"
+    "mocha": "^6.0.2"
   }
 }
