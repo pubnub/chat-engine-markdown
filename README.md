@@ -1,3 +1,7 @@
+This repository is a part of the [ChatEngine Framework](https://github.com/pubnub/chat-engine).
+For more information on building chat applications with PubNub, see our
+[Chat Resource Center](http://www.pubnub.com/developers/chat-resource-center/).
+
 # Markdown Plugin for ChatEngine
 
 Adds the ability to render Markdown in a ChatEngine Chat
@@ -20,13 +24,13 @@ ChatEngine.on('$ready', () = { ... });
 ChatEngine.global.plugin(ChatEngineCore.plugin['chat-engine-markdown']());
 ```
 
-3. Listen for the message event
+2. Listen for the message event
 ```js
 ChatEngine.global.on('message', (payload) => {
     console.log(payload.data.text);
 });
 ```
-2. Send a message containing Markdown
+3. Send a message containing Markdown
 ```js
 ChatEngine.global.emit('message', {
     text: 'This is some *markdown* **for sure**.'
@@ -36,4 +40,4 @@ ChatEngine.global.emit('message', {
 
 ## Support
 
-- If you **need help**, have a **general question** a **feature request** or to file a **bug**, contact <support@pubnub.com>
+- If you **need help**, have a **general question**, have a **feature request** or to file a **bug**, contact <support@pubnub.com>.
